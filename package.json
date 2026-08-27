@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prebuild": "bash scripts/sync-ui.sh"
   },
   "dependencies": {
-    "@psychomantic/ui-react": "file:../packages/psychomantic-ui",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^3.8.1",

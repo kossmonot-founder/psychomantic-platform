@@ -10,7 +10,12 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@psychomantic/ui-react": ["vendor/ui-react/index.d.ts"],
+      "@psychomantic/ui-react/styles.css": ["vendor/ui-react/ui-react.css"]
+    }
   },
   "include": ["src"]
 }
