@@ -1,0 +1,194 @@
+/* Portail développeur Psychomantic — design Pastelo (aligné landing/app) */
+
+:root {
+  --pf-bg: #f8fafc;
+  --pf-card: #ffffff;
+  --pf-text: #1e293b;
+  --pf-muted: #64748b;
+  --pf-violet: #beabfa;
+  --pf-violet-deep: #5b3a9c;
+  --pf-violet-med: #ddd6fe;
+  --pf-violet-bg: #f2e7ff;
+  --pf-radius: 3px;
+  --pf-radius-panel: 16px;
+  --pf-shadow: 0 8px 40px rgba(148, 163, 184, 0.15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  line-height: 1.6;
+}
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.pf-header {
+  border-bottom: 1px solid var(--pf-violet-med);
+  background: var(--pf-card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.pf-header .container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+}
+.pf-logo {
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--pf-text);
+}
+.pf-logo span { color: var(--pf-violet-deep); }
+.pf-badge-beta {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--pf-radius);
+  background: var(--pf-violet-bg);
+  border: 1px solid var(--pf-violet-med);
+  color: var(--pf-violet-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.pf-nav { margin-left: auto; display: flex; gap: 18px; }
+.pf-nav a {
+  font-size: 14px;
+  color: var(--pf-muted);
+  text-decoration: none;
+}
+.pf-nav a:hover { color: var(--pf-text); }
+
+/* Hero */
+.pf-hero {
+  padding: 72px 0 48px;
+  text-align: center;
+}
+.pf-hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+.pf-hero h1 em {
+  font-style: normal;
+  color: var(--pf-violet-deep);
+}
+.pf-hero p {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  color: var(--pf-muted);
+  font-size: 17px;
+}
+.pf-hero-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.pf-metric { text-align: center; }
+.pf-metric strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--pf-violet-deep);
+}
+.pf-metric span { font-size: 12px; color: var(--pf-muted); }
+
+/* Sections */
+.pf-section { padding: 48px 0; }
+.pf-section h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.pf-section > .container > p {
+  color: var(--pf-muted);
+  margin: 0 0 24px;
+  max-width: 640px;
+}
+
+/* Cards */
+.pf-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.pf-card {
+  background: var(--pf-card);
+  border: 1px solid var(--pf-violet-med);
+  border-radius: var(--pf-radius-panel);
+  padding: 20px;
+  box-shadow: var(--pf-shadow);
+}
+.pf-card h3 { margin: 0 0 8px; font-size: 16px; }
+.pf-card p { margin: 0 0 12px; font-size: 14px; color: var(--pf-muted); }
+.pf-card pre {
+  margin: 0;
+  padding: 12px;
+  font-size: 12px;
+  background: var(--pf-bg);
+  border-radius: var(--pf-radius);
+  overflow-x: auto;
+  border: 1px solid var(--pf-violet-med);
+}
+
+/* Showroom */
+.pf-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.pf-tab {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--pf-violet-med);
+  border-radius: var(--pf-radius);
+  background: transparent;
+  color: var(--pf-text);
+  cursor: pointer;
+}
+.pf-tab[aria-selected='true'] {
+  background: var(--pf-violet);
+  color: #1a052d;
+}
+.pf-showroom-stage {
+  background: var(--pf-card);
+  border: 1px solid var(--pf-violet-med);
+  border-radius: var(--pf-radius-panel);
+  box-shadow: var(--pf-shadow);
+  padding: 20px;
+}
+
+/* Footer */
+.pf-footer {
+  border-top: 1px solid var(--pf-violet-med);
+  padding: 24px 0;
+  margin-top: 48px;
+  font-size: 13px;
+  color: var(--pf-muted);
+}
+.pf-footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pf-footer a { color: var(--pf-violet-deep); text-decoration: none; }
