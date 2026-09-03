@@ -1,2 +1,7 @@
 node_modules/
 dist/
+
+# Environment - aucune cle ni secret ne doit jamais etre commite
+.env
+.env.*
+!.env.example
